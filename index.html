@@ -6,12 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Malaika Zafar - Personal Website</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Cat Animation Styling */
+        #cat {
+            position: absolute; /* Allows it to move freely */
+            width: 50px; /* Size of the cat icon */
+            height: 50px;
+            font-size: 50px; /* Size for the emoji icon */
+            transition: transform 0.1s ease;
+            pointer-events: none; /* Prevent mouse events */
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header>
         <h1>Malaika Zafar</h1>
-        <nav>
+        <nav class="navbar">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
@@ -22,16 +33,47 @@
     </header>
 
     <!-- Main Content Area for Index Page -->
-    <main>
+    <main class="content">
         <section id="intro">
-            <h2>Welcome to My Personal Website!</h2>
-            <p>Hello! My name is Malaika Zafar. I am currently a Level 5 student completing my module.</p>
+            <div class="center-box">
+                <h2>Welcome to My Personal Website!</h2>
+                <p>Hello! My name is Malaika Zafar. I am currently a Level 5 student completing my module.</p>
+            </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <p>&copy; 2024 Malaika Zafar | All rights reserved</p>
     </footer>
+
+    <!-- Cat Animation -->
+    <div id="cat">🐱</div>
+
+    <script>
+        const cat = document.getElementById('cat');
+        let x = Math.random() * (window.innerWidth - 50); // Adjust for the cat's width
+        let y = Math.random() * (window.innerHeight - 150); // Adjust for header and footer height
+        let dx = 2;
+        let dy = 2;
+
+        // Function to move the cat icon
+        function moveCat() {
+            x += dx;
+            y += dy;
+
+            // Bounce off the edges of the main content area
+            if (x + cat.offsetWidth > window.innerWidth - 20 || x < 0) dx = -dx;
+            if (y + cat.offsetHeight > window.innerHeight - 150 || y < 0) dy = -dy; // Adjust for header/footer
+
+            cat.style.left = x + 'px';
+            cat.style.top = y + 'px';
+
+            requestAnimationFrame(moveCat); // Repeat the animation
+        }
+
+        // Start moving the cat icon
+        moveCat();
+    </script>
 </body>
 </html>

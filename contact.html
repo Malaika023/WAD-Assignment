@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Malaika Zafar</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <h1>Contact Me</h1>
-        <nav>
+        <nav class="navbar">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
@@ -21,20 +22,44 @@
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main class="content">
         <section id="contact">
             <h2>Let's Connect!</h2>
-            <ul>
-                <li>Email: malaika.zafar@example.com</li>
-                <li>Instagram: <a href="https://www.instagram.com/malaika_zafar">malaika_zafar</a></li>
-                <li>Facebook: <a href="https://www.facebook.com/malaika.zafar">Malaika Zafar</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/malaika-zafar">Malaika Zafar</a></li>
-            </ul>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/malaika_zafar" target="_blank" class="instagram" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:malaika.zafar@example.com" class="gmail" aria-label="Gmail">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/malaika-zafar" target="_blank" class="linkedin" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+
+            <!-- Contact Form -->
+            <form class="contact-table" action="#" method="POST">
+                <table>
+                    <tr>
+                        <th><label for="name">Name:</label></th>
+                        <td><input type="text" id="name" name="name" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="contact">Contact Number:</label></th>
+                        <td><input type="tel" id="contact" name="contact" required></td>
+                    </tr>
+                    <tr>
+                        <th><label for="email">Email:</label></th>
+                        <td><input type="email" id="email" name="email" required></td>
+                    </tr>
+                </table>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <p>&copy; 2024 Malaika Zafar | All rights reserved</p>
     </footer>
 </body>
