@@ -1,178 +1,208 @@
 /* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8f5;
-    color: #333;
+    background-color: #f0f8f5; /* Light background color */
+    color: #333; /* Default text color */
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures body covers full viewport height */
 }
 
 /* Header Styles */
 header {
-    background-color: #2E8B57; /* Header remains unchanged */
-    color: white;
+    background-color: #2E8B57; /* Header background color */
+    color: white; /* Header text color */
     text-align: center;
     padding: 20px 0;
 }
 
 header h1 {
-    margin: 0;
+    margin: 0; /* No margin for the header title */
 }
 
 nav ul {
-    list-style-type: none;
+    list-style-type: none; /* No bullet points for nav list */
     padding: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: inline; /* Inline list items */
+    margin: 0 15px; /* Space between nav items */
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+    color: white; /* Nav link color */
+    text-decoration: none; /* No underline for links */
+    font-weight: bold; /* Bold text for links */
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover */
 }
 
 /* Main Content Styles */
 main {
-    padding: 20px;
+    position: relative; /* Position relative to allow absolute children */
+    flex-grow: 1; /* Allow main to grow and take available space */
+    padding: 20px; /* Padding for content */
 }
 
-h2 {
-    color: #2E8B57;
+/* Video Background */
+.video-background {
+    position: absolute; /* Positioning for video */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover the entire area */
+    z-index: -1; /* Behind all other elements */
 }
 
+/* Section Styling */
 section {
-    margin-bottom: 30px;
+    margin-bottom: 30px; /* Space between sections */
 }
 
-/* Footer Styles */
-footer {
-    background-color: #2E8B57; /* Footer is green */
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-/* Simple Animation */
-h1, h2 {
-    animation: fadeIn 2s ease-in-out;
+/* White box styling for different sections */
+.white-box {
+    max-width: 600px; /* Max width of the white box */
+    padding: 20px; /* Padding inside the box */
+    margin: 20px auto; /* Center the box horizontally */
+    background-color: #fff; /* White background for the box */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+    text-align: left; /* Align text to the left */
 }
 
 /* Centered white text box styling */
 .center-box {
-    max-width: 600px;
-    padding: 30px;
-    margin: auto; /* Centers horizontally */
-    background-color: #fff;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-align: center;
-    margin-top: 150px; /* Centers vertically with respect to the navbar */
+    max-width: 600px; /* Max width of the center box */
+    padding: 30px; /* Padding inside the center box */
+    margin: auto; /* Center the box horizontally */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for the box */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center text */
+    margin-top: 150px; /* Space above the box */
+    height: 300px; /* Fixed height for the box */
+    color: #333; /* Text color for visibility */
+}
+
+/* Heading Styles */
+h2 {
+    color: #2E8B57; /* Color for h2 headings */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2E8B57; /* Footer background color */
+    color: white; /* Footer text color */
+    text-align: center; /* Center footer text */
+    padding: 10px 0; /* Padding for footer */
+    position: relative; /* Position relative to the page */
+    width: 100%; /* Full width */
+}
+
+/* Simple Animation */
+h1, h2 {
+    animation: fadeIn 2s ease-in-out; /* Fade-in animation for headings */
 }
 
 /* Icon styles for social media links */
 .social-icons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    padding: 20px;
+    display: flex; /* Flex container for icons */
+    gap: 15px; /* Space between icons */
+    justify-content: center; /* Center the icons */
+    padding: 20px; /* Padding around icons */
 }
 
 .social-icons a {
-    text-decoration: none;
-    color: #333;
-    font-size: 24px;
-    transition: color 0.3s;
+    text-decoration: none; /* No underline for icons */
+    color: #333; /* Default icon color */
+    font-size: 24px; /* Icon size */
+    transition: color 0.3s; /* Smooth color transition */
 }
 
 .social-icons a:hover {
     color: #0077b5; /* Change color on hover */
 }
 
-/* Individual icon colors */
-.social-icons a.instagram:hover { color: #C13584; }
-.social-icons a.gmail:hover { color: #EA4335; }
-.social-icons a.linkedin:hover { color: #0077b5; }
+/* Individual icon hover colors */
+.social-icons a.instagram:hover { color: #C13584; } /* Instagram hover color */
+.social-icons a.gmail:hover { color: #EA4335; } /* Gmail hover color */
+.social-icons a.linkedin:hover { color: #0077B5; } /* LinkedIn hover color */
 
 /* Styles for the contact table */
 .contact-table {
-    border-collapse: collapse;
-    width: 400px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 8px;
+    border-collapse: collapse; /* Collapse table borders */
+    width: 100%; /* Table width */
+    background-color: #fff; /* Table background color */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Table shadow */
+    border-radius: 8px; /* Rounded corners */
 }
 
 .contact-table th {
-    text-align: left;
-    padding: 10px;
-    font-size: 1.1em;
-    color: #555;
+    text-align: left; /* Align header text to the left */
+    padding: 10px; /* Padding for header */
+    font-size: 1.1em; /* Header font size */
+    color: #555; /* Header text color */
 }
 
 .contact-table td {
-    padding: 10px;
+    padding: 10px; /* Padding for table cells */
 }
 
+/* Input field styles */
 .contact-table input[type="text"],
 .contact-table input[type="email"],
 .contact-table input[type="tel"] {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+    width: 100%; /* Full width of input fields */
+    padding: 8px; /* Padding inside input fields */
+    margin-top: 5px; /* Space above input fields */
+    border: 1px solid #ccc; /* Border for input fields */
+    border-radius: 5px; /* Rounded corners for input fields */
+    box-sizing: border-box; /* Box sizing for padding */
 }
 
+/* Submit button styles */
 .submit-btn {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
+    display: block; /* Block display for button */
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding for button */
+    margin-top: 20px; /* Space above button */
+    background-color: #4CAF50; /* Button background color */
+    color: white; /* Button text color */
+    font-size: 1em; /* Button font size */
+    border: none; /* No border for button */
+    border-radius: 5px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center button text */
 }
 
 .submit-btn:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Darker shade on hover */
 }
 
-/* Cat animation styles */
-#cat {
-    position: absolute;
-    width: 50px; /* Size of the cat icon */
-    height: 50px;
-    font-size: 50px; /* Size for the emoji icon */
-    transition: transform 0.1s ease;
+/* AI Head animation styles */
+#ai-head {
+    position: absolute; /* Position AI head element */
+    width: 100px; /* Size of the AI head */
+    height: 100px; /* Size for the AI head */
+    transition: transform 0.1s ease; /* Smooth transition for transform */
 }
 
-/* Full height settings */
-body, html {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+/* List Styles */
+.skills-list {
+    list-style-type: disc; /* Bullet points for the list */
+    padding-left: 20px; /* Indentation for list items */
 }
 
-/* Center the content */
-.content {
-    flex: 1;
-    padding: 20px;
-    text-align: center;
+/* Certificate Image Styling */
+.certificates {
+    display: flex; /* Align certificates */
+    justify-content: center; /* Center certificates */
+    gap: 20px; /* Space between certificates */
+    margin-top: 20px; /* Space above certificates */
 }

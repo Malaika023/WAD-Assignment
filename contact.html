@@ -6,6 +6,88 @@
     <title>Contact - Malaika Zafar</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Body styling to accommodate video background */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            position: relative; /* Position for absolute children */
+            overflow: hidden; /* Prevent scrollbars caused by video */
+        }
+
+        /* Video background styling */
+        .video-background {
+            position: absolute;
+            top: 0; /* Align to the top of the main content */
+            left: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            object-fit: cover; /* Cover the entire area */
+            z-index: -1; /* Behind all other elements */
+        }
+
+        /* Main content styling */
+        main {
+            position: relative; /* To keep content on top of video */
+            z-index: 1; /* Above the video */
+            padding: 20px; /* Padding around main content */
+        }
+
+        /* Additional styling for contact form */
+        .contact-table {
+            margin-top: 20px; /* Space above the contact form */
+            width: 100%; /* Full width */
+            max-width: 600px; /* Maximum width for the table */
+            margin-left: auto; /* Center the table */
+            margin-right: auto; /* Center the table */
+            background: rgba(255, 255, 255, 0.8); /* White background with transparency */
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px; /* Padding inside the form */
+        }
+
+        .contact-table th, .contact-table td {
+            padding: 10px; /* Space inside table cells */
+        }
+
+        .submit-btn {
+            margin-top: 10px; /* Space above the button */
+            padding: 10px 20px; /* Button padding */
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        /* Social icons styling */
+        .social-icons {
+            display: flex; /* Align icons in a row */
+            justify-content: center; /* Center the icons */
+            margin-top: 20px; /* Space above the icons */
+        }
+
+        .social-icons a {
+            margin: 0 10px; /* Space between icons */
+            font-size: 24px; /* Icon size */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .social-icons a.instagram {
+            color: #C13584; /* Instagram color */
+        }
+
+        .social-icons a.gmail {
+            color: #DB4437; /* Gmail color */
+        }
+
+        .social-icons a.linkedin {
+            color: #0077B5; /* LinkedIn color */
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -21,21 +103,16 @@
         </nav>
     </header>
 
+    <!-- Background Video -->
+    <video class="video-background" autoplay loop muted>
+        <source src="path/to/your/video/16535123_MotionElements_social-networks-app-logos-icons-rain-big-tech-falling-social-media-green-scr_preview.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
     <!-- Main Content -->
     <main class="content">
         <section id="contact">
             <h2>Let's Connect!</h2>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/malaika_zafar" target="_blank" class="instagram" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="mailto:malaika.zafar@example.com" class="gmail" aria-label="Gmail">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/malaika-zafar" target="_blank" class="linkedin" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </div>
 
             <!-- Contact Form -->
             <form class="contact-table" action="#" method="POST">
@@ -55,6 +132,19 @@
                 </table>
                 <button type="submit" class="submit-btn">Submit</button>
             </form>
+            
+            <!-- Social Icons at the bottom -->
+            <div class="social-icons">
+                <a href="https://www.instagram.com/malaika_zafar" target="_blank" class="instagram" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:malaika.zafar@example.com" class="gmail" aria-label="Gmail">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/malaika-zafar" target="_blank" class="linkedin" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
         </section>
     </main>
 
