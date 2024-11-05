@@ -49,6 +49,13 @@ main {
     padding: 20px; /* Padding for content */
 }
 
+/* Background Image for Contact Page */
+main.contact-page {
+    background-image: url('path/to/your/image/image_1361081414.jpg'); /* Set the image as background */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+}
+
 /* Video Background */
 .video-background {
     position: absolute; /* Positioning for video */

@@ -18,7 +18,7 @@
         main {
             position: relative; /* To keep content on top */
             padding: 20px; /* Padding around main content */
-            background-image: url('path/to/your/image/icon-green-contact-us-butto-260nw-2233810469.jpg'); /* Set the image as background */
+            background-image: url('path/to/your/image/image_1361081414.jpg'); /* Set the image as background */
             background-size: cover; /* Cover the entire area */
             background-position: center; /* Center the image */
             z-index: 1; /* Above other content */
@@ -28,19 +28,28 @@
         }
 
         /* Additional styling for contact form */
-        .contact-table {
+        .contact-form {
             margin-top: 20px; /* Space above the contact form */
             width: 100%; /* Full width */
-            max-width: 600px; /* Maximum width for the table */
-            margin-left: auto; /* Center the table */
-            margin-right: auto; /* Center the table */
+            max-width: 600px; /* Maximum width for the form */
+            margin-left: auto; /* Center the form */
+            margin-right: auto; /* Center the form */
             background: rgba(255, 255, 255, 0.8); /* White background with transparency */
             border-radius: 10px; /* Rounded corners */
             padding: 20px; /* Padding inside the form */
         }
 
-        .contact-table th, .contact-table td {
-            padding: 10px; /* Space inside table cells */
+        .contact-form label {
+            display: block; /* Make labels block elements */
+            margin-bottom: 5px; /* Space below labels */
+        }
+
+        .contact-form input {
+            width: 100%; /* Full width for input fields */
+            padding: 10px; /* Padding inside input fields */
+            margin-bottom: 15px; /* Space below inputs */
+            border-radius: 5px; /* Rounded corners */
+            border: 1px solid #ccc; /* Border for inputs */
         }
 
         .submit-btn {
@@ -103,21 +112,16 @@
             <h2>Let's Connect!</h2>
 
             <!-- Contact Form -->
-            <form class="contact-table" action="#" method="POST">
-                <table>
-                    <tr>
-                        <th><label for="name">Name:</label></th>
-                        <td><input type="text" id="name" name="name" required></td>
-                    </tr>
-                    <tr>
-                        <th><label for="contact">Contact Number:</label></th>
-                        <td><input type="tel" id="contact" name="contact" required></td>
-                    </tr>
-                    <tr>
-                        <th><label for="email">Email:</label></th>
-                        <td><input type="email" id="email" name="email" required></td>
-                    </tr>
-                </table>
+            <form class="contact-form" action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
                 <button type="submit" class="submit-btn">Submit</button>
             </form>
             
